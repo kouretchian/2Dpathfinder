@@ -1,0 +1,15 @@
+image:
+  path: 'images'
+  filename: 'polygons.png'
+
+coordinates: 
+  pairs: [0,0,1,5]
+  disjoint: True
+
+disjoint_coordinates:
+  pair_1: [0,0,1,2]
+  pair_2: [10,20,30,40]
+
+visualization:
+  output_path: 'results/images'
+  flag: True
