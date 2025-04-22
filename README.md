@@ -24,40 +24,40 @@ This project solves the problem of finding valid paths between two points in a b
 └── README.md             # This file
 
 
-## ⚙️ Setup Instructions
+## ⚙️ **Setup Instructions**
 Install the package locally using:
 pip install -e .
 You can then run your program with:
 pathfinder2d
 
 
-🚀 Running the Project
+## 🚀 **Running the Project**
 
 Update the input parameters in config.yml and then run `python main.py`
 
-🧪 Test Coverage
+## 🧪 **Test Coverage**
 
 You can also run the built-in edge case tests by executing:
 
-python Test_utils.py
+```python Test_utils.py```
+
 Tests include:
 
-Valid path exists in clear grid
-White pixel blocking start or end
-Wall obstructing path
-Out-of-bounds coordinates
-Single-pixel edge case
+- Valid path exists in clear grid
+- White pixel blocking start or end
+- Wall obstructing path
+- Out-of-bounds coordinates
+- Single-pixel edge case
 
-📸 Example Output
+## 📸 **Example Output**
 
-If visualization.flag is enabled, the result will be saved to:
+If visualization.flag is enabled, the result will be saved to results/images/path_visualization.png
 
-results/images/path_visualization.png
 Red and blue overlays represent valid disjoint paths (for the disjoint task).
 If disjoint is False, then the code only checks if a path exists between two pairs of points.
 If disjoint is True, then the code check if separate path exists for two pairs of paths.
 
-✅ Additional Highlights
+## ✅ **Additional Highlights**
 
 Modular & readable structure
 YAML-driven configuration
