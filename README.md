@@ -1,12 +1,12 @@
 # 🧭 2D Path Finder in Binary Images
 
-This project solves the problem of finding valid paths between two points in a black-and-white image where only black pixels (`0`) are traversable. It includes:
+This project provides a solution for finding valid paths in binary (black-and-white) images, where black pixels (`0`) are traversable. It supports:
 
-- A pathfinding algorithm for a single path (Part 1)
-- A solution for finding two non-intersecting paths for given two pairs of start and end (Part 2)
-- Image visualization of paths
-- Configurable inputs via `config.yml`
-- Edge case testing to showcase robustness
+- ✅ Pathfinding between two points (Part 1)
+- ✅ Discovery of **two disjoint paths** between two pairs of coordinates (Part 2)
+- 🖼️ Image-based path visualization
+- ⚙️ Configurable via `config.yml`
+- 🧪 Edge case testing for robustness
 
 ---
 
@@ -14,53 +14,79 @@ This project solves the problem of finding valid paths between two points in a b
 
 ```text
 .
-├── main.py               # Entry script for executing path finding
-├── PathFinder.py         # Core algorithm logic
-├── parse_utils.py        # Utilities for parsing YAML and image inputs
-├── Test_utils.py         # Edge case tests for validation
-├── config.yml            # Configurable coordinates and paths
-├── images/               # Input images
+├── main.py               # Main script to execute pathfinding
+├── PathFinder.py         # Core algorithm for single and disjoint paths
+├── parse_utils.py        # YAML/image parsing utilities
+├── Test_utils.py         # Edge case unit tests
+├── config.yml            # Coordinate and mode configuration
+├── images/               # Input image files
 ├── results/images/       # Output visualizations
-└── README.md             # This file
+└── README.md             # Project documentation
+```
 
+---
 
 ## ⚙️ Setup Instructions
-Install the package locally using:
+
+To install the project locally in development mode:
+
+```bash
 pip install -e .
-You can then run your program with:
+```
+
+Then run the pathfinding program with:
+
+```bash
 pathfinder2d
+```
 
+---
 
-🚀 Running the Project
+## 🚀 Running the Project
 
-Update the input parameters in config.yml and then run `python main.py`
+1. Update `config.yml` with desired input parameters (e.g., coordinates, image file path).
+2. Run the main script:
 
-🧪 Test Coverage
+```bash
+python main.py
+```
 
-You can also run the built-in edge case tests by executing:
+---
 
+## 🧪 Running Tests
+
+Run edge case tests by executing:
+
+```bash
 python Test_utils.py
-Tests include:
+```
 
-Valid path exists in clear grid
-White pixel blocking start or end
-Wall obstructing path
-Out-of-bounds coordinates
-Single-pixel edge case
+### Test Scenarios:
+- ✔️ Valid path in an unobstructed grid
+- ✔️ Blocked start or end point
+- ✔️ Wall obstructing the path
+- ✔️ Out-of-bound coordinates
+- ✔️ Single-pixel edge case
 
-📸 Example Output
+---
 
-If visualization.flag is enabled, the result will be saved to:
+## 📸 Example Output
 
+If `visualization.flag` in `config.yml` is set to `True`, a path visualization will be saved at:
+
+```
 results/images/path_visualization.png
-Red and blue overlays represent valid disjoint paths (for the disjoint task).
-If disjoint is False, then the code only checks if a path exists between two pairs of points.
-If disjoint is True, then the code check if separate path exists for two pairs of paths.
+```
 
-✅ Additional Highlights
+- 🔵 Blue and 🔴 red overlays represent valid disjoint paths.
+- If `disjoint: false` → validates a single path between a start and end point.
+- If `disjoint: true` → validates existence of two **non-overlapping** paths for two point pairs.
 
-Modular & readable structure
-YAML-driven configuration
-Fully type-annotated functions
-Clear error handling and logging
+---
 
+## ✅ Key Features
+
+- Modular and readable code structure
+- YAML-driven configuration
+- Fully type-annotated Python functions
+- Robust error handling and logging
